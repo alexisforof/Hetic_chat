@@ -20,6 +20,11 @@ Configuration
     // Affectation du module dotenv dans la variable port
     const port = process.env.PORT;
 
+    // Déclaration, affectaiton du chemin de la route
+    const frontRouteur = require('./routes/front.routes');
+
+    
+
 
     class ServerClass {
         init(){
@@ -31,6 +36,9 @@ Configuration
 
             // Config du moteur de rendu
             server.set('view engine', 'ejs');
+
+            // Utilisation de la route
+            server.use('/', frontRouteur);
 
             // Lancer le server
             this.launch();
