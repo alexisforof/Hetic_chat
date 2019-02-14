@@ -1,21 +1,23 @@
 /* 
 Imports
 */
-    const {Router} = require('express');
+    // NodeJS
+    const { Router } = require('express');
 
-    const frontRouter = require('./front/front.routes')
+    // Inner
+    const FrontRouterClass = require('./front/front.routes')
 //
 
 /* 
 Configuration
 */
     const mainRouter = Router();
-    
-    mainRouter.use('/', frontRouter)
+    const frontRouter = new FrontRouterClass();
+    mainRouter.use('/', frontRouter.init());
 //
 
 /* 
-Exports
+Export
 */
     module.exports = mainRouter;
 //
