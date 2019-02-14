@@ -9,7 +9,7 @@ Imports
     const ejs = require('ejs');
     const path = require('path');
     const bodyParser = require('body-parser');
-    
+
 //
 
 /* 
@@ -21,25 +21,40 @@ Configuration
     const port = process.env.PORT;
 
 
-    //Config du dossier client
-    server.set('views', __dirname + '/www');
-    server.use(express.static(path.join(__dirname, 'www')));
+    class ServerClass {
+        init(){
+
+            //Config du dossier client
+            server.set('views', __dirname + '/www');
+            server.use(express.static(path.join(__dirname, 'www')));
 
 
-    // Config du moteur de rendu
-    server.set('view engine', 'ejs');
+            // Config du moteur de rendu
+            server.set('view engine', 'ejs');
 
+            // Lancer le server
+            this.launch();
+            
+        }
+
+        launch(){
+
+            // Lancer le serveur
+            // Fonction permettant d'afficher dans la console au démarage sur server
+            // Le serveur écoute sur le port 4242
+            server.listen(port, () => {
+                console.log(`"Ecoute sur le port : "${port}`);
+            });
+            
+        }
+    }
+    
 //
 
 /* 
 Démarage du serveur
 */
 
-    // Lancer le serveur
-    // Fonction permettant d'afficher dans la console au démarage sur server
-    // Le serveur écoute sur le port 4242
-    server.listen(port, () => {
-        console.log(`"Ecoute sur le port : "${port}`);
-    });
+    new ServerClass().init();
 
 //
