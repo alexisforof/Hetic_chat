@@ -21,12 +21,14 @@ Configuration
     const port = process.env.PORT;
 
     // Déclaration, affectaiton du chemin de la route
-    const frontRouteur = require('./routes/front.routes');
+    const mainRouteur = require('./routes/main.router');
+
 
     
 
 
     class ServerClass {
+
         init(){
 
             //Config du dossier client
@@ -38,7 +40,8 @@ Configuration
             server.set('view engine', 'ejs');
 
             // Utilisation de la route
-            server.use('/', frontRouteur);
+            server.use('/', mainRouteur);
+            
 
             // Lancer le server
             this.launch();
