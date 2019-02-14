@@ -2,9 +2,9 @@
 
 Mise ne pmace d'une application de chat (chatbot)
 
-- Intitialiser le dossier serveur (npm init)
-- Créer un fichier pour le serveur
-- Importer les composants express, body-parser, dotenv, ejs, mongoose, path (npm i -s)
+- Intitialiser le dossier serveur (npm init) ok
+- Créer un fichier pour le serveur ok
+- Importer les composants express, body-parser, dotenv, ejs, mongoose, path, nodemon (npm i -s) ok
 - Configurer le fichier server : 
 
     - Créer une constante pour les imports (attention à dotenv)

@@ -1,0 +1,5 @@
+# ignore du package node_modules
+node_modules/
+
+# ingore du module .env contenant le port
+.env
