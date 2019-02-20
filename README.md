@@ -22,3 +22,19 @@ Mise ne pmace d'une application de chat (chatbot)
     - Créer la route login
     - Créer la route chat
 
+## Création de l'API
+- Créer un fichier de routes pour l'API (cf. front.routes)
+- Créer une routes /register
+- Créer une routes /login
+
+## Création des formulaires resgister/login
+- Le formulaire d'inscription contient
+    - Email
+    - pseudo
+    - password (x2)
+    - cgu
+
+- Le formumlaire de connexion contient : 
+    - Email
+    - Password
+
